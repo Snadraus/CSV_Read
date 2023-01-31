@@ -1,0 +1,81 @@
+﻿@model CSV_Read.Models.CSV_Headers
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CSV_Headers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-action="FileToDb">
+            <p>
+                File: <input type="text" name="fileName" />
+                <input type="submit" value="Read" />
+            </p>
+        </form>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="index" class="control-label"></label>
+                <input asp-for="index" class="form-control" />
+                <span asp-validation-for="index" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="organization" class="control-label"></label>
+                <input asp-for="organization" class="form-control" />
+                <span asp-validation-for="organization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="website" class="control-label"></label>
+                <input asp-for="website" class="form-control" />
+                <span asp-validation-for="website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="country" class="control-label"></label>
+                <input asp-for="country" class="form-control" />
+                <span asp-validation-for="country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="founded" class="control-label"></label>
+                <input asp-for="founded" class="form-control" />
+                <span asp-validation-for="founded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="industry" class="control-label"></label>
+                <input asp-for="industry" class="form-control" />
+                <span asp-validation-for="industry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numEmp" class="control-label"></label>
+                <input asp-for="numEmp" class="form-control" />
+                <span asp-validation-for="numEmp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

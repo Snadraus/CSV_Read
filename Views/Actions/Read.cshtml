@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+@model CSV_Read.Models.CSV_Headers
+
+@{
+    ViewData["Title"] = "Read";
+}
+
+<h2>CSV Reader Homepage</h2>
+
+<form asp-controller = "CSV_HeadersController" asp-action="fileToDb">
+    <p>
+        File: <input type="text" name="fileName"/>  
+        <input type="submit" value="Read" />
+    </p>
+</form>
